@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    block site_head
+      include _partial/head.pug
+  body
+    header#header.clearfix
+      block site_header
+        include _partial/header.pug
+    #body
+      .container
+        .row
+          #main.col-mb-12.col-8(role='main')
+            block site_body
+          #secondary.col-mb-12.col-offset-1.col-3.kit-hidden-tb(role='complementary')
+            block site_widgets
+    footer#footer(role='contentinfo')
+      block site_footer
+        include _partial/footer.pug

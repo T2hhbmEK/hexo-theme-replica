@@ -1,0 +1,8 @@
+section.widget
+  h3.widget-title
+    | #{__('widget.other')}
+  ul.widget-list
+    li
+      a(href=url_for(config.feed.path)) #{__('widget.feed')}
+    li
+      a(href=url_for('https://hexo.io/')) Hexo

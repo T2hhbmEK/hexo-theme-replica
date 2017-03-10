@@ -1,0 +1,22 @@
+.container
+  .row
+    .site-name.col-mb-12.col-9
+      a#logo(href=url_for()) #{config.title}
+      p.description #{page.description || config.description}
+    .site-search.col-3.kit-hidden-tb
+      form#search
+        label.sr-only(for='s') #{__('search.keyword')}
+        input.text(name='s' placeholder=__('search.placeholder') type='text')
+        button.submit(type='submit') #{__('search.submit')}
+    .col-mb-12
+      nav#nav-menu.clearfix(role='navigation')
+        if is_home() || path=='index.html'
+          a(href=url_for()).current #{__('nav.home')}
+        else
+          a(href=url_for()) #{__('nav.home')}
+        if theme.menu
+          each menu, key in theme.menu
+            if path.startsWith(menu.match(/[^\/].+/g))
+              a(href=url_for(menu)).current #{__('nav.'+key)}
+            else
+              a(href=url_for(menu)) #{__('nav.'+key)}

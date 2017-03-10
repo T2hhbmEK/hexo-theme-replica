@@ -1,0 +1,39 @@
+include post-meta.pug
+
+//- title
+mixin article_title(title, path)
+  h2.post-title(itemprop='name headline')
+    a(itemtype='url' href=url_for(path)) #{title}
+//- Excerpt
+mixin article_excerpt(excerpt, path)
+  .post-content(itemprop='articleBody')
+    p.
+      !{excerpt}
+    p.more
+      a(href=url_for(path)) - #{__('meta.more')} -
+//- Content
+mixin article_content(content, path)
+  .post-content(itemprop='articleBody')
+    p.
+      !{content}
+//- Tags
+mixin article_tags(tags)
+  if tags && tags.length > 0
+    p.tags(itemprop='keywords')
+      | #{__('meta.tags')}:
+      |
+      each tag, index in tags.toArray()
+        if index > 0
+          | ,
+          |
+        a(href=url_for(tag.path)) #{tag.name}
+
+mixin article(post)
+  article.post(itemtype='http://schema.org/BlogPosting' itemscope='')
+    +article_title(post.title, post.path)
+    +post_meta(post)
+    if is_home() || is_archive()
+      +article_excerpt(post.excerpt || post.content, post.path)
+    else if is_post() || true
+      +article_content(post.content, post.path)
+      +article_tags(post.tags)

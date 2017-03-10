@@ -1,0 +1,45 @@
+//- Author
+mixin post_meta_author(author, url)
+  li(itemprop!='author' itemscope!='' itemtype!='http://schema.org/Person')
+    | #{__('meta.author')}:
+    |
+    if !author
+      - author = config.author;
+      - url = config.author_url || config.url;
+    a(itemprop!='name' href=url_for(url) rel!='author')
+      | #{author}
+
+//- Publish date
+mixin post_meta_date(date)
+  if date && date.format
+    li
+      | #{__('meta.time')}:
+      |
+      time(datetime=date.format() itemprop='datePublished')
+        | #{date.format('LL')}
+//- Categories
+mixin post_meta_categories(categories)
+  if categories && categories.length > 0
+    li
+      | #{__('meta.categories')}:
+      |
+      each category, index in categories.toArray()
+        if index > 0
+          | ,
+          |
+        a(href=url_for(category.path)) #{category.name}
+//- Comments
+mixin post_meta_comments(path, count)
+  li(itemprop='interactionCount')
+    a(itemprop='discussionUrl' href=url_for(path)+'#comments')
+      | #{_p('meta.comments', count)}
+
+//- meta info
+mixin post_meta(post)
+  ul.post-meta
+    +post_meta_author(post.author, post.author_url)
+    +post_meta_date(post.updated)
+    +post_meta_categories(post.categories)
+    if post.comments && is_home()
+      //- TODO: comment_count
+      +post_meta_comments(post.path, post.comment_count)

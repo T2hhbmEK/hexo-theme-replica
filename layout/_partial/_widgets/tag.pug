@@ -1,0 +1,7 @@
+section.widget
+  h3.widget-title
+    | #{__('widget.tag')}
+  ul.widget-list
+    - tags = site.tags.toArray();
+    each tag in tags
+      a(href=url_for(tag.path)).tag= tag.name

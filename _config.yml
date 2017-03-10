@@ -1,0 +1,15 @@
+google_analytics:
+menu:
+  about: '/about.html'
+index:
+  pager:
+    range: 0
+widgets:
+  recent_reply:
+    enabled: true
+  category:
+    enabled: true
+  tag:
+    enabled: true
+  other:
+    enabled: true

@@ -1,0 +1,8 @@
+section.widget
+  h3.widget-title
+    | #{__('widget.category')}
+  ul.widget-list
+    - categories = site.categories.toArray();
+    each category in categories
+      li.category-level-0.category-parent
+        a(href=url_for(category.path))= category.name
