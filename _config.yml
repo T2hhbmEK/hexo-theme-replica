@@ -1,10 +1,13 @@
 google_analytics:
 menu:
-  about: '/about.html'
+  archives: '/archives/'
+  about: '/about/'
 index:
   pager:
     range: 0
 widgets:
+  toc:
+    enabled: true
   recent_reply:
     enabled: true
   category:

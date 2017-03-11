@@ -2,17 +2,18 @@ index:
   get_started: Get started
   next_page: Next
   prev_page: Previous
+  no_page: Not found
 search:
   keyword: Search keyword
   placeholder: Search...
   submit: Search
 nav:
   home: Home
-  archive: Archive
+  archives: Archives
   about: About
 meta:
   author: Author
-  time: Last update
+  time: Created
   categories: Categories
   tags: Tags
   comments:
@@ -26,3 +27,4 @@ widget:
   tag: Tags
   other: Others
   feed: RSS
+  toc: Contents

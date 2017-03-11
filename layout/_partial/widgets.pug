@@ -1,12 +1,14 @@
 //- for each widget
 each widget, title in theme.widgets
   if widget.enabled
-    case title
-      when 'category'
-        include _widgets/category.pug
-      when 'tag'
-        include _widgets/tag.pug
-      when 'other'
-        include _widgets/other.pug
-      default
-        include _widgets/default.pug
+      case title
+        when 'toc'
+          include _widgets/toc.pug
+        when 'category'
+          include _widgets/category.pug
+        when 'tag'
+          include _widgets/tag.pug
+        when 'other'
+          include _widgets/other.pug
+        default
+          include _widgets/default.pug

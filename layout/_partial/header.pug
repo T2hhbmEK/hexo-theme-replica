@@ -4,7 +4,7 @@
       a#logo(href=url_for()) #{config.title}
       p.description #{page.description || config.description}
     .site-search.col-3.kit-hidden-tb
-      form#search
+      form#search(method='post' action='./' role='search')
         label.sr-only(for='s') #{__('search.keyword')}
         input.text(name='s' placeholder=__('search.placeholder') type='text')
         button.submit(type='submit') #{__('search.submit')}

@@ -1,0 +1,6 @@
+if is_post()
+  section#article-toc.widget(role='navigation')
+    h3.widget-title
+      | #{__('widget.toc')}
+    ul.widget-list
+      | !{toc(page.content)}

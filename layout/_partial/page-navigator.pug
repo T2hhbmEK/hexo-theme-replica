@@ -1,33 +1,43 @@
-//- TODO: add page-navigator
-mixin page_navigator(page)
-  if page.current && page.total
-    ol.page-navigator
-      - let range = theme.index.pager.range || 1;
-      - let idx = page.current-range;
-      if idx < 1
-        - idx = 1;
-      if idx > page.total
-        - idx = page.total;
-      if page.prev
-        li.prev
-          a(href=url_for(page.prev_link)) #{__('index.prev_page')}
-      if idx > 1
-        li
-          a(href = url_for())= 1
-      if idx > 3
-        li
-          span ...
-      if idx == 3
-        - idx = 2;
-      while idx <= page.total && idx <= page.current+range || idx == page.total-1
-        li(class = (idx == page.current) && 'current')
-          a(href = url_for((idx == 1) && '/' || '/page/'+idx+'/'))= idx++
-      if idx < page.total-1
-        li
-          span ...
-      if idx <= page.total && page.total > 1
-        li
-          a(href = url_for('/page/'+page.total+'/'))= page.total
-      if page.next
-        li.next
-          a(href=url_for(page.next_link)) #{__('index.next_page')}
+//- page-navigator
+if page.current && page.total
+  ol.page-navigator
+    -
+      let range = 1;
+      if (theme.index && theme.index.pager && theme.index.pager.range >= 0)
+        range = theme.index.pager.range;
+      let first = page.current-range;
+      if (first < 1) first = 1;
+      let last = page.current+range;
+      if (last > page.total) last = page.total;
+    //- previos page
+    if page.prev
+      li.prev
+        a(href=url_for(page.prev_link)) #{__('index.prev_page')}
+    //- first page
+    if first > 1
+      li
+        a(href = url_for())= 1
+    //- show '...' if uncovered pages more than one page in the front
+    if first > 3
+      li
+        span ...
+    //- if there is only one uncovered page, show it instead of '...'
+    -
+      if (first == 3) first = 2;
+      if (last == page.total-2) last = page.total-1;
+      let idx = first;
+    while idx <= last
+      li(class = (idx == page.current) && 'current')
+        a(href = url_for((idx == 1) && '/' || '/page/'+idx+'/'))= idx++
+    //- show '...' if uncovered pages more than one page at the back
+    if last < page.total-1
+      li
+        span ...
+    //- last page
+    if last < page.total
+      li
+        a(href = url_for('/page/'+page.total+'/'))= page.total
+    //- next page
+    if page.next
+      li.next
+        a(href=url_for(page.next_link)) #{__('index.next_page')}

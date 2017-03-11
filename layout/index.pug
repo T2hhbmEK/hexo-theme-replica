@@ -1,16 +1,13 @@
 extends base.pug
 include _partial/article.pug
-include _partial/page-navigator.pug
 
-block site_body
+block site_content
   if is_home()
     //- for each post page
     if page && page.posts
       each post in page.posts.toArray()
           +article(post)
-    +page_navigator(page)
+    include _partial/page-navigator.pug
 
 block site_widgets
   include _partial/widgets.pug
-
-

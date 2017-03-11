@@ -1,7 +1,7 @@
 extends index.pug
 include _partial/article.pug
 
-block site_body
+block site_content
   article.post(itemtype='http://schema.org/BlogPosting' itemscope='')
     +article_title(page.title, page.path)
     +article_content(page.content, page.path)

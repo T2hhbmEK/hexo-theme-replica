@@ -1,5 +1,7 @@
 extends index.pug
 
-block site_body
-  +article(page)
-  include _partial/comments.pug
+block site_content
+  if is_post()
+    +article(page)
+    include _partial/comments.pug
+    include _partial/post_near.pug

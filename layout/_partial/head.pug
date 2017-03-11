@@ -2,12 +2,15 @@
 meta(charset='utf-8')
 //- titile
 title=page.title || config.title
+meta(http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1')
+meta(name='viewport' content='width=device-width, initial-scale=1')
 <!-- Canonical links -->
 link(ref='canonical' href=url)
 <!-- Alternative links -->
 if page.layout == 'page' || page.layout == 'index'
-  each val, key in site.data.languages
-    link(rel='alternative' hreflang=key href=canonical_url(key))
+  if site.data.languages
+    each val, key in site.data.languages
+      link(rel='alternative' hreflang=key href=canonical_url(key))
 <!-- Icon -->
 //- TODO: replace these icons
 link(rel='apple-touch-icon' sizes='57x57' href=url_for('icon/apple-touch-icon-57x57.png'))
@@ -27,9 +30,9 @@ meta(name='msapplication-TileColor' content='#2f83cd')
 meta(name='msapplication-TileImage' content=url_for('icon/mstile-144x144.png'))
 <!-- CSS -->
 .
-  !{css('css/style')}
-  !{css('css/grid')}
   !{css('css/normalize.min')}
+  !{css('css/grid')}
+  !{css('css/style')}
 <!-- JS -->
 .
   !{js('js/jquery.min.js')}

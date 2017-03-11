@@ -23,9 +23,10 @@ code {
 pre {
 	padding:8px;
 	overflow:auto;
+	border-radius:4px;
 }
 pre code, pre .code {
-	padding:3px;
+	padding:0px;
 	color:#444;
 }
 blockquote {
@@ -393,4 +394,19 @@ img.alignright {
 a.tag {
 	margin:2px;
 	line-height:1.5;
+}
+#article-toc.fixed {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 218px;
+}
+ol, ul {
+	list-style: none;
+}
+ol {
+	padding: 0;
+}
+ol.toc-child {
+	padding-left: 1em;
 }
