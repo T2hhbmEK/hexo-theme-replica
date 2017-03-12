@@ -26,7 +26,7 @@ git pull
 
 ## Configuration
 
-[_config.yml](_config.yml)
+[Theme config file](_config.yml).
 
 ## TODO List
 
