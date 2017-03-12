@@ -472,3 +472,6 @@ ol.toc-child {
 .filters a, .filters span{
 	margin: 5px 5px;
 }
+.tag-cloud a{
+	margin: 2px 0;
+}
