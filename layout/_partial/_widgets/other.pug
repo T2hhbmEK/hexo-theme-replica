@@ -4,5 +4,6 @@ section.widget
   ul.widget-list
     li
       a(href=url_for(config.feed.path)) #{__('widget.feed')}
-    li
-      a(href=url_for('https://hexo.io/')) Hexo
+    each link, key in theme.widgets.other.links
+      li
+        a(href=url_for(link)) #{__(key)}

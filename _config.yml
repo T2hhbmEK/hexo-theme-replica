@@ -21,3 +21,6 @@ widgets:
     end_color: 'tomato'
   other:
     enabled: true
+    links:
+      Hexo: https://hexo.io/
+      Netlify: https://app.netlify.com/
