@@ -1,0 +1,26 @@
+google_analytics:
+index:
+  pager:
+    range: 1
+widgets:
+  toc:
+    enabled: true
+  recent_reply:
+    enabled: true
+  category:
+    enabled: true
+    type: 'monthly' # 'yearly','monthly'
+    show_count: true
+    depth: 3
+  tag:
+    enabled: true
+    min_font: 15
+    max_font: 25
+    color: true
+    start_color: 'lightslategrey'
+    end_color: 'tomato'
+  other:
+    enabled: true
+    links:
+      Hexo: https://hexo.io/
+      Netlify: https://app.netlify.com/

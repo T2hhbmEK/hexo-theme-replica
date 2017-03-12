@@ -1,0 +1,27 @@
+//- page-navigator
+if page.current && page.total && page.total > 1
+  ol.page-navigator
+    -
+      let range = 1;
+      if (theme.index && theme.index.pager && theme.index.pager.range >= 0)
+        range = theme.index.pager.range;
+      let arr = [{
+        ok: true,
+        title: page.current,
+        current: true,
+        path: page.current_url,
+      }];
+      arr = [{
+        ok: page.prev,
+        title: __('index.prev_page'),
+        path: page.prev_link,
+      }, ...arr, {
+        ok: page.next,
+        title: __('index.next_page'),
+        path: page.next_link,
+      }];
+      //- console.log(arr);
+    each nav, index in arr
+      if nav.ok
+        li.next
+          a(href=url_for(nav.path) class=nav.current && 'current') #{nav.title}

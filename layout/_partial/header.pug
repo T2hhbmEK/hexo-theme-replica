@@ -1,0 +1,15 @@
+.container
+  .row
+    .site-name.col-mb-12.col-9
+      a#logo(href=url_for()) #{config.title}
+      p.description #{config.subtitle || config.description}
+    .site-search.col-3.kit-hidden-tb
+      //- TODO: search
+      //- | !{search_form()}
+      form#search(method='post' action='./' role='search')
+        label.sr-only(for='s') #{__('search.keyword')}
+        input.text(name='s' placeholder=__('search.placeholder') type='text')
+        button.submit(type='submit') #{__('search.submit')}
+    .col-mb-12
+      nav#nav-menu.clearfix(role='navigation')
+        include _header/menu.pug
