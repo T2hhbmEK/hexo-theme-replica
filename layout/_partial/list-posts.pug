@@ -1,0 +1,53 @@
+include article.pug
+
+//- list posts
+mixin list_posts(posts)
+  if posts
+    each post in posts.toArray()
+        +article(post)
+  include page-navigator.pug
+
+mixin list_filters(filters)
+  p.filters
+    for filter in filters
+      span #{filter}
+
+//- archive index
+mixin archive_index
+  -
+    archives = list_archives({
+      type: theme.widgets.category.type,
+      show_count: false,
+      style: 'none',
+      separator: '',
+    });
+  p.filters
+    | !{archives}
+
+//- archive list
+mixin archive_list
+  p.filters
+    -
+      let format = page.month ? 'MMMM YYYY' : 'YYYY';
+      let _date = page.month ?
+        moment({year: page.year, month: page.month-1}) :
+        moment({year: page.year});
+      _date = _date.locale(page.lang);
+    span !{_date.format(format)}
+
+//- home
+if is_home()
+//- archive
+else if is_archive()
+  //- h1 #{__('nav.archives')}:
+  //- for each post page
+  if is_month() || is_year()
+    +archive_list
+  else
+    +archive_index
+else if is_tag()
+  +list_filters([page.tag])
+else if is_category()
+  +list_filters([page.category])
+//- for each post page
++list_posts(page.posts)

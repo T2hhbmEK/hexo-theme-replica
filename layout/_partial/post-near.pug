@@ -1,17 +1,17 @@
 ul.post-near
   li
-    | #{__('index.prev_page')}:
+    | #{__('page.prev_post')}:
     |
     if page.prev
       a(href=url_for(page.prev.path))
         | #{page.prev.title}
     else
-      | #{__('index.no_page')}
+      | #{__('page.no_post')}
   li
-    | #{__('index.next_page')}:
+    | #{__('page.next_post')}:
     |
     if page.next
       a(href=url_for(page.next.path))
         | #{page.next.title}
     else
-      | #{__('index.no_page')}
+      | #{__('page.no_post')}

@@ -12,7 +12,7 @@ mixin article_excerpt(excerpt, path)
     p.more
       a(href=url_for(path)) - #{__('meta.more')} -
 //- Content
-mixin article_content(content, path)
+mixin article_content(content)
   .post-content(itemprop='articleBody')
     p.
       !{content}
@@ -32,9 +32,12 @@ mixin article(post)
   article.post(itemtype='http://schema.org/BlogPosting' itemscope='')
     +article_title(post.title, post.path)
     +post_meta(post)
-    if is_home()
-      +article_excerpt(post.excerpt || post.content, post.path)
+    if is_home() || is_tag() || is_category() || is_archive()
+      if post.excerpt
+        +article_excerpt(post.excerpt, post.path)
+      else
+        +article_content(post.content)
     else if is_archive()
     else if is_post() || true
-      +article_content(post.content, post.path)
+      +article_content(post.content)
       +article_tags(post.tags)

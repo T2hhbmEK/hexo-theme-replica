@@ -3,4 +3,14 @@ if is_post()
     h3.widget-title
       | #{__('widget.toc')}
     ul.widget-list
-      | !{toc(page.content)}
+      -
+        let _toc = null;
+        if (page.encrypt == true) {
+          _toc = toc(page.origin);
+        } else {
+          _toc = toc(page.content);
+        }
+      if _toc
+        | !{_toc}
+      else
+        | #{__('widget.empty')}

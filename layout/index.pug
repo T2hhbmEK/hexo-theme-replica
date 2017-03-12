@@ -1,13 +1,4 @@
 extends base.pug
-include _partial/article.pug
 
 block site_content
-  if is_home()
-    //- for each post page
-    if page && page.posts
-      each post in page.posts.toArray()
-          +article(post)
-    include _partial/page-navigator.pug
-
-block site_widgets
-  include _partial/widgets.pug
+  include _partial/list-posts.pug

@@ -1,9 +1,16 @@
-if is_home() || is_about()
+if is_home() || is_about() || is_category()
   section.widget
     h3.widget-title
       | #{__('widget.category')}
-    ul.widget-list
-      - categories = site.categories.toArray();
-      each category in categories
-        li.category-level-0.category-parent
-          a(href=url_for(category.path))= category.name
+    //- ul.widget-list
+      //- - categories = site.categories.toArray();
+      //- each category in categories
+      //-   li.category-level-0.category-parent
+      //-     a(href=url_for(category.path))= category.name
+    -
+      categories = list_categories({
+        class: 'widget',
+        show_count: theme.widgets.category.show_count,
+        depth: theme.widgets.category.depth,
+      });
+    | !{categories}

@@ -3,6 +3,10 @@ index:
   next_page: Next
   prev_page: Previous
   no_page: Not found
+page:
+  next_post: Next
+  prev_post: Previous
+  no_post: Not found
 search:
   keyword: Search keyword
   placeholder: Search...
@@ -28,3 +32,4 @@ widget:
   other: Others
   feed: RSS
   toc: Contents
+  empty: Nothing here

@@ -1,2 +1,6 @@
-#comments
-  h3 #{_p('meta.comments', page.comment_count)}
+if page.comments
+  #comments
+    h3 #{_p('meta.comments', page.comment_count)}
+else
+  #comments
+    h3 #{__('comment.close')}

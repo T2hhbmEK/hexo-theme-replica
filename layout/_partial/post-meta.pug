@@ -9,14 +9,14 @@ mixin post_meta_author(author, url)
     a(itemprop!='name' href=url_for(url) rel!='author')
       | #{author}
 
-//- Publish date
+//- Date
 mixin post_meta_date(date)
   if date && date.format
     li
       | #{__('meta.time')}:
       |
       time(datetime=date.format() itemprop='datePublished')
-        | #{date.format('LL')}
+        | #{date.locale(page.lang).format('LL')}
 //- Categories
 mixin post_meta_categories(categories)
   if categories && categories.length > 0
