@@ -1,0 +1,27 @@
+mixin menu_home
+  if is_home()
+    a(href=url_for()).current #{__('nav.home')}
+  else
+    a(href=url_for()) #{__('nav.home')}
+
+mixin menu_archive
+  if is_archive()
+    a(href=url_for(config.archive_dir)).current #{__('nav.archives')}
+  else
+    a(href=url_for(config.archive_dir)) #{__('nav.archives')}
+
+mixin menu_about
+  if is_about()
+    a(href=url_for('about/')).current #{__('nav.about')}
+  else
+    a(href=url_for('about/')) #{__('nav.about')}
+
++menu_home
+if site.data.menu
+  each menu, key in site.data.menu
+    if path.startsWith(menu.match(/[^\/].+/g))
+      a(href=url_for(menu)).current #{__('nav.'+key)}
+    else
+      a(href=url_for(menu)) #{__('nav.'+key)}
++menu_archive
++menu_about

@@ -1,0 +1,35 @@
+index:
+  get_started: Get started
+  next_page: Next
+  prev_page: Previous
+  no_page: Not found
+page:
+  next_post: Next
+  prev_post: Previous
+  no_post: Not found
+search:
+  keyword: Search keyword
+  placeholder: Search...
+  submit: Search
+nav:
+  home: Home
+  archives: Archives
+  about: About
+meta:
+  author: Author
+  time: Created
+  categories: Categories
+  tags: Tags
+  comments:
+    zero: No comment
+    one: 1 comment
+    other: '%d comments'
+  more: Read more
+widget:
+  recent_reply: Recent comments
+  category: Categories
+  tag: Tags
+  other: Others
+  feed: RSS
+  toc: Contents
+  empty: Nothing here

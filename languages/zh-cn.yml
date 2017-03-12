@@ -1,0 +1,37 @@
+index:
+  get_started: 开始
+  next_page: 下一页
+  prev_page: 上一页
+  no_page: 没有了
+page:
+  next_post: 下一篇
+  prev_post: 上一篇
+  no_post: 没有了
+search:
+  keyword: 搜索关键字
+  placeholder: 输入关键字搜索
+  submit: 搜索
+nav:
+  home: 主页
+  archives: 归档
+  about: 关于
+meta:
+  author: 作者
+  time: 时间
+  categories: 分类
+  tags: 标签
+  comments:
+    zero: 评论
+    one: 1 条评论
+    other: '%d 条评论'
+  more: 阅读剩余部分
+widget:
+  recent_reply: 最近回复
+  category: 分类
+  tag: 标签
+  other: 其他
+  feed: 文章 RSS
+  toc: 目录
+  empty: 空空如也
+comment:
+  close: 评论已关闭

@@ -1,0 +1,19 @@
+if is_home() || is_about() || is_tag()
+  section.widget
+    h3.widget-title
+      | #{__('widget.tag')}
+      ul.widget-list.tag-cloud
+        //- - tags = site.tags.toArray();
+        //- each tag in tags
+        //-   a(href=url_for(tag.path)).tag= tag.name
+        -
+          tags = tagcloud(site.tags, {
+            min_font: theme.widgets.tag.min_font || 10,
+            max_font: theme.widgets.tag.max_font || 20,
+            color: theme.widgets.tag.color,
+            start_color: theme.widgets.tag.start_color,
+            end_color: theme.widgets.tag.end_color,
+            style: 'none',
+            separator: ''
+          });
+        | !{tags}

@@ -1,0 +1,9 @@
+section.widget
+  h3.widget-title
+    | #{__('widget.other')}
+  ul.widget-list
+    li
+      a(href=url_for(config.feed.path)) #{__('widget.feed')}
+    each link, key in theme.widgets.other.links
+      li
+        a(href=url_for(link)) #{__(key)}
