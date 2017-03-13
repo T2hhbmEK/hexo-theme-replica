@@ -33,3 +33,6 @@ widget:
   feed: RSS
   toc: Contents
   empty: Nothing here
+  backtotop: Back to Top
+comment:
+  close: Comments closed

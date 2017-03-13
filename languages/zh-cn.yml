@@ -33,5 +33,6 @@ widget:
   feed: 文章 RSS
   toc: 目录
   empty: 空空如也
+  backtotop: 回到顶部
 comment:
   close: 评论已关闭
