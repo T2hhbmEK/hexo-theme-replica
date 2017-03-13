@@ -475,3 +475,13 @@ ol.toc-child {
 .tag-cloud a{
 	margin: 2px 0;
 }
+#secondary.fixed {
+	width: 238px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	float: right;
+	margin-left: 713.984px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}

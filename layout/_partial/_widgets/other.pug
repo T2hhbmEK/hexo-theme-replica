@@ -7,3 +7,5 @@ section.widget
     each link, key in theme.widgets.other.links
       li
         a(href=url_for(link)) #{__(key)}
+    li
+      a#back-to-top(href='#') #{__('widget.backtotop')}
