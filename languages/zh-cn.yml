@@ -17,7 +17,8 @@ nav:
   about: 关于
 meta:
   author: 作者
-  time: 时间
+  date: 创建时间
+  updated: 更新时间
   categories: 分类
   tags: 标签
   comments:
@@ -36,3 +37,6 @@ widget:
   backtotop: 回到顶部
 comment:
   close: 评论已关闭
+about:
+  aboutme: 关于我
+  links: 友情链接

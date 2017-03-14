@@ -17,7 +17,8 @@ nav:
   about: About
 meta:
   author: Author
-  time: Created
+  date: Created
+  updated: Updated
   categories: Categories
   tags: Tags
   comments:
@@ -36,3 +37,6 @@ widget:
   backtotop: Back to Top
 comment:
   close: Comments closed
+about:
+  aboutme: About me
+  links: Links

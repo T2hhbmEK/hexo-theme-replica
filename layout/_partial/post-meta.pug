@@ -10,13 +10,19 @@ mixin post_meta_author(author, url)
       | #{author}
 
 //- Date
-mixin post_meta_date(date)
+mixin post_meta_date(date, updated)
   if date && date.format
     li
-      | #{__('meta.time')}:
+      | #{__('meta.date')}:
       |
       time(datetime=date.format() itemprop='datePublished')
         | #{date.locale(page.lang).format('LL')}
+  if updated && updated.format && updated.isAfter(date)
+    li
+      | #{__('meta.updated')}:
+      |
+      time(datetime=updated.format() itemprop='dateUpdated')
+        | #{(updated).locale(page.lang).format('LL')}
 //- Categories
 mixin post_meta_categories(categories)
   if categories && categories.length > 0
@@ -38,8 +44,11 @@ mixin post_meta_comments(path, count)
 mixin post_meta(post)
   ul.post-meta
     +post_meta_author(post.author, post.author_url)
-    +post_meta_date(post.date)
+    +post_meta_date(post.date, post.updated)
     +post_meta_categories(post.categories)
     if post.comments && is_home()
       //- TODO: comment_count
       +post_meta_comments(post.path, post.comment_count)
+    //- li.debug-info
+    //-   a
+    //-     | #{post._id}

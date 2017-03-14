@@ -38,6 +38,15 @@ mixin article(post)
       else
         +article_content(post.content)
     else if is_archive()
-    else if is_post() || true
+    else if is_post()
       +article_content(post.content)
       +article_tags(post.tags)
+    else if is_about()
+      h2 #{__('about.aboutme')}
+      +article_content(post.content)
+      h2 #{__('about.links')}
+      if Array.isArray(config.links)
+        each link in config.links
+          p
+            a(href=link.url) #{href=link.title}
+            |  (#{link.description})
