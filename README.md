@@ -26,27 +26,22 @@ git pull
 
 ## Configuration
 
-[_config.yml](_config.yml)
+[Theme config file](_config.yml).
 
 ## TODO List
 
-TODO:
 - [ ] Posts & posts pagination sorted by updated/date.
 - [ ] Post unique cid for premalink. (1, 2, 3 ...)
 - [x] Search.
 - [ ] Disqus comments.
-- [ ] Rewrite css in [stylus].
-  - Responsive UI.
+- [ ] Rewrite css in [stylus](https://github.com/stylus/stylus).
+  - [ ] Responsive UI.
 - [ ] Brand new icons.
 - [ ] Documentation.
 - [ ] Material design.
-  - [ ] [Icon Font].
-  - [ ] [Material Colors].
-- [ ] [gulp.js].
+  - [ ] [Icon Font](http://google.github.io/material-design-icons/).
+  - [ ] [Material Colors](https://github.com/shuhei/material-colors).
+- [ ] [gulp.js](http://gulpjs.com/).
 
 [Hexo]: https://hexo.io/
 [Typecho]: http://typecho.org/
-[styl]: https://github.com/stylus/stylus
-[Icon Font]: http://google.github.io/material-design-icons/
-[Material Colors]：https://github.com/shuhei/material-colors
-[gulp.js]： http://gulpjs.com/
