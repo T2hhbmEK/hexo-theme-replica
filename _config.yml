@@ -24,3 +24,5 @@ widgets:
     links:
       Hexo: https://hexo.io/
       Netlify: https://app.netlify.com/
+busuanzi: true
+license: false
