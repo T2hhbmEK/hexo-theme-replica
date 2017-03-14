@@ -33,7 +33,7 @@ git pull
 TODO:
 - [ ] Posts & posts pagination sorted by updated/date.
 - [ ] Post unique cid for premalink. (1, 2, 3 ...)
-- [ ] Search.
+- [x] Search.
 - [ ] Disqus comments.
 - [ ] Rewrite css in [stylus].
   - Responsive UI.
