@@ -1,5 +1,4 @@
-Replica
----
+# Replica
 
 An elegant theme for [Hexo]. Replica of [Typecho] default theme.
 
