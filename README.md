@@ -37,6 +37,7 @@ git pull
   - Pls use **hexo-generator-alias** for migrated posts.
 - [x] Search.
 - [x] Links. Link other sites.
+- [ ] Better web fonts.
 - [ ] Disqus comments.
 - [ ] Rewrite css in [stylus](https://github.com/stylus/stylus).
   - [ ] Responsive UI.
