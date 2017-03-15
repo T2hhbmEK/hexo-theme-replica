@@ -34,7 +34,9 @@ git pull
 - [x] <del>Post unique cid for premalink. (1, 2, 3 ...)</del>
   - This is not a good idea for static blog. number id is not permanent.
   - Pls use **hexo-generator-alias** for migrated posts.
-- [x] Search.
+- [ ] Structured data. Microdata.
+  - [Google Structed Data Testing Tool](https://search.google.com/structured-data/testing-tool) Passed: **False**
+- [ ] Search. Better impelementation needed.
 - [x] Links. Link other sites.
 - [ ] Better web fonts.
 - [ ] Disqus comments.

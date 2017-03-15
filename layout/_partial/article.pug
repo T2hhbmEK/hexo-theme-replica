@@ -3,9 +3,10 @@ include post-meta.pug
 //- title
 mixin article_title(title, path)
   h2.post-title(itemprop='name headline')
-    a(itemtype='url' href=url_for(path)) #{title}
+    a(itemtype='url mainEntityOfPage' href=url_for(path)) #{title}
 //- Excerpt
 mixin article_excerpt(excerpt, path)
+  .post-photo(itemprop='image' href=page.photos && page.photos[0])
   .post-content(itemprop='articleBody')
     p.
       !{excerpt}

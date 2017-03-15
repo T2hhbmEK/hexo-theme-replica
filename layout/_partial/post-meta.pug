@@ -6,8 +6,8 @@ mixin post_meta_author(author, url)
     if !author
       - author = config.author;
       - url = config.author_url || config.url;
-    a(itemprop!='name' href=url_for(url) rel!='author')
-      | #{author}
+    a(itemprop!='url' href=url_for(url) rel!='author')
+      span(itemprop!='name publisher') #{author}
 
 //- Date
 mixin post_meta_date(date, updated)
@@ -15,14 +15,16 @@ mixin post_meta_date(date, updated)
     li
       | #{__('meta.date')}:
       |
-      time(datetime=date.format() itemprop='datePublished')
-        | #{date.locale(page.lang).format('LL')}
+      time(datetime=date.format() 
+        itemprop='datePublished' + 
+        (!updated.isAfter(date) && ' dateModified' || ''))
+        | #{date.locale(page.lang).fromNow()}
   if updated && updated.format && updated.isAfter(date)
     li
       | #{__('meta.updated')}:
       |
-      time(datetime=updated.format() itemprop='dateUpdated')
-        | #{(updated).locale(page.lang).format('LL')}
+      time(datetime=updated.format() itemprop='dateModified')
+        | #{(updated).locale(page.lang).fromNow()}
 //- Categories
 mixin post_meta_categories(categories)
   if categories && categories.length > 0
