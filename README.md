@@ -30,9 +30,13 @@ git pull
 
 ## TODO List
 
-- [ ] Posts & posts pagination sorted by updated/date.
-- [ ] Post unique cid for premalink. (1, 2, 3 ...)
-- [ ] Search.
+- [x] Posts & posts pagination sorted by updated/date.
+  - **hexo-generator-index** already has config options.
+- [x] <del>Post unique cid for premalink. (1, 2, 3 ...)</del>
+  - This is not a good idea for static blog. number id is not permanent.
+  - Pls use **hexo-generator-alias** for migrated posts.
+- [x] Search.
+- [x] Links. Link other sites.
 - [ ] Disqus comments.
 - [ ] Rewrite css in [stylus](https://github.com/stylus/stylus).
   - [ ] Responsive UI.

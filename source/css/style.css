@@ -206,11 +206,11 @@ textarea {
 }
 .page-navigator li {
 	display:inline-block;
-	margin:0 4px;
 }
-.page-navigator a {
+.page-navigator a, .page-navigator .page-number{
 	display:inline-block;
 	padding:0 10px;
+	margin:0 4px;
 	height:30px;
 	line-height:30px;
 }
@@ -218,7 +218,7 @@ textarea {
 	background:#DDD;
 	text-decoration:none;
 }
-.page-navigator .current a {
+.page-navigator .current a ，.page-navigator .current span, .page-navigator span.current{
 	color:#444;
 	background:#DDD;
 }
