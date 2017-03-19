@@ -1,8 +1,10 @@
 -
   let firstYear = (Math.min(site.posts.map(post => {return post.date.year()}).sort().shift(),site.pages.map(post => {return post.date.year()}).sort().shift()));
   let thisYear = moment(Date.now()).year();
-| #{config.author} powered
-|  #{firstYear < thisYear ? `${firstYear}-` : ''}#{thisYear}
+span(itemprop="copyrightHolder") #{config.author}
+|  powered#{' '}
+span(itemprop="copyrightYear").
+  #{firstYear < thisYear ? `${firstYear}-` : ''}#{thisYear}
 br
 if theme.busuanzi
   span#busuanzi_container_site_pv

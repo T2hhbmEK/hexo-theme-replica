@@ -3,7 +3,7 @@ include post-meta.pug
 //- title
 mixin article_title(title, path)
   h2.post-title(itemprop='name headline')
-    a(itemtype='url mainEntityOfPage' href=url_for(path)) #{title}
+    a(itemprop='mainEntityOfPage' href=url_for(path)) #{title}
 //- Excerpt
 mixin article_excerpt(excerpt, path)
   .post-photo(itemprop='image' href=page.photos && page.photos[0])
@@ -29,10 +29,14 @@ mixin article_tags(tags)
           |
         a(href=url_for(tag.path)) #{tag.name}
 
+mixin seo(post)
+  .hidden
+
 mixin article(post)
-  article.post(itemtype='http://schema.org/BlogPosting' itemscope='')
+  article.post(itemtype='http://schema.org/BlogPosting' itemscope)
     +article_title(post.title, post.path)
     +post_meta(post)
+    +seo(post)
     if is_home() || is_tag() || is_category() || is_archive()
       if post.excerpt
         +article_excerpt(post.excerpt, post.path)
