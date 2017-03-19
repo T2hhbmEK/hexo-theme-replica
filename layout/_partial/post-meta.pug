@@ -18,13 +18,13 @@ mixin post_meta_date(date, updated)
       time(datetime=date.format() 
         itemprop='datePublished' + 
         (!updated.isAfter(date) && ' dateModified' || ''))
-        | #{date.locale(page.lang).fromNow()}
+        | #{date.locale(page.lang).format('LL')}
   if updated && updated.format && updated.isAfter(date)
     li
       | #{__('meta.updated')}:
       |
       time(datetime=updated.format() itemprop='dateModified')
-        | #{(updated).locale(page.lang).fromNow()}
+        | #{(updated).locale(page.lang).format('LL')}
 //- Categories
 mixin post_meta_categories(categories)
   if categories && categories.length > 0
