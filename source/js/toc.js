@@ -2,19 +2,20 @@
   'use strict';
 
   var header = document.getElementById('header');
-  var toc = document.getElementById('secondary');
+  var main = document.getElementById('main');
+  var secondary = document.getElementById('secondary');
   var backToTop = document.getElementById('back-to-top');
   var headerHeight = header.clientHeight;
 
-  if (!toc) return;
+  if (!secondary) return;
 
   function updateSidebarPosition(){
     var scrollTop = document.scrollingElement.scrollTop;
 
-    if (scrollTop > headerHeight){
-      toc.classList.add('fixed');
+    if (scrollTop > headerHeight && main.clientHeight > secondary.clientHeight){
+      secondary.classList.add('fixed');
     } else {
-      toc.classList.remove('fixed');
+      secondary.classList.remove('fixed');
     }
   }
 
