@@ -4,7 +4,7 @@ html
     block site_head
       include _partial/head.pug
   block site_body
-    body
+    body(itemscope='' itemtype='http://schema.org/WebPage' lang=page.lang)
       header#header.clearfix
         block site_header
           include _partial/header.pug
