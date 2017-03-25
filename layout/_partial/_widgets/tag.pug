@@ -2,7 +2,7 @@ if is_home() || is_about() || is_tag()
   section.widget
     h3.widget-title
       | #{__('widget.tag')}
-    ul.widget-list.tag-cloud
+    .widget-list.tag-cloud
       //- - tags = site.tags.toArray();
       //- each tag in tags
       //-   a(href=url_for(tag.path)).tag= tag.name
