@@ -6,10 +6,11 @@
     .site-search.col-3.kit-hidden-tb
       //- TODO: search
       //- | !{search_form()}
-      form#search(method='get' action='//google.com/search' accept-charset="UTF-8" class="search-form" role='search')
-        input.text(name='q' placeholder=__('search.placeholder') type='text' results="0")
+      form#search(method='get' action='//google.com/search'
+        accept-charset="UTF-8" class="search-form" role='search')
+        input.text(name='q' placeholder=__('search.placeholder') type='text')
         input(type="hidden" name="sitesearch" value=config.url)
         button.submit(type='submit') #{__('search.submit')}
     .col-mb-12
-      nav#nav-menu.clearfix(role='navigation')
+      nav#nav-menu.clearfix
         include _header/menu.pug

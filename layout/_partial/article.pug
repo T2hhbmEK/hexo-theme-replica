@@ -8,15 +8,13 @@ mixin article_title(title, path)
 mixin article_excerpt(excerpt, path)
   .post-photo(itemprop='image' href=page.photos && page.photos[0])
   .post-content(itemprop='articleBody')
-    p.
-      !{excerpt}
+    | !{excerpt}
     p.more
       a(href=url_for(path)) - #{__('meta.more')} -
 //- Content
 mixin article_content(content)
   .post-content(itemprop='articleBody')
-    p.
-      !{content}
+    | !{content}
 //- Tags
 mixin article_tags(tags)
   if tags && tags.length > 0
@@ -36,7 +34,7 @@ mixin article(post)
   article.post(itemtype='http://schema.org/BlogPosting' itemscope)
     +article_title(post.title, post.path)
     +post_meta(post)
-    +seo(post)
+    //- +seo(post)
     if is_home() || is_tag() || is_category() || is_archive()
       if post.excerpt
         +article_excerpt(post.excerpt, post.path)
