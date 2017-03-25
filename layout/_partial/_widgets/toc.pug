@@ -2,15 +2,15 @@ if is_post()
   section#article-toc.widget(role='navigation')
     h3.widget-title
       | #{__('widget.toc')}
-    ul.widget-list
-      -
-        let _toc = null;
-        if (page.encrypt == true) {
-          _toc = toc(page.origin);
-        } else {
-          _toc = toc(page.content);
-        }
-      if _toc
+    if _toc
+      ul.widget-list
+        -
+          let _toc = null;
+          if (page.encrypt == true) {
+            _toc = toc(page.origin);
+          } else {
+            _toc = toc(page.content);
+          }
         | !{_toc}
-      else
-        | #{__('widget.empty')}
+    else
+      | #{__('widget.empty')}
