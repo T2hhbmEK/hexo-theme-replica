@@ -6,7 +6,7 @@ span(itemprop="copyrightHolder") #{config.author}
 span(itemprop="copyrightYear").
   #{firstYear < thisYear ? `${firstYear}-` : ''}#{thisYear}
 br
-if theme.busuanzi
+if theme.busuanzi && !env.args.local
   span#busuanzi_container_site_pv
     span#busuanzi_value_site_pv
     |  siteviews

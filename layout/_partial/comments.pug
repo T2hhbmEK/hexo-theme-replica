@@ -1,10 +1,10 @@
 if page.comments
   #comments.comments
     h3 #{_p('meta.comments', page.comment_count)}
-    if theme.duoshuo
+    if theme.duoshuo && !env.args.local
       .ds-thread(
-        data-thread-key=page['ds-data-thread-key'] || page.path 
-        data-title=page.title 
+        data-thread-key=page['ds-data-thread-key'] || page.path
+        data-title=page.title
         data-url=page.permalink)
 else
   #comments.comments
